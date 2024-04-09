@@ -90,11 +90,8 @@
     <Compile Include="UserAccount.xaml.cs">
       <DependentUpon>UserAccount.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserBank\UserDebit.xaml.cs">
-      <DependentUpon>UserDebit.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserBank\Withdrawl.xaml.cs">
-      <DependentUpon>Withdrawl.xaml</DependentUpon>
+    <Compile Include="UserBank\Withdraw.xaml.cs">
+      <DependentUpon>Withdraw.xaml</DependentUpon>
     </Compile>
     <Page Include="UserBank\AddAccount.xaml">
       <SubType>Designer</SubType>
@@ -131,11 +128,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserBank\UserDebit.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserBank\Withdrawl.xaml">
+    <Page Include="UserBank\Withdraw.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -101,7 +101,7 @@
                                         FontFamily="Tahoma" FontSize="11" FontStyle="Normal"
                                         FontWeight="Normal"
                                         VerticalAlignment="Top" Block.LineHeight="Auto" Block.TextAlignment="Left"
-                                        Height="18" HorizontalAlignment="Left" Width="120" Margin="0,10,0,0" SelectionChanged="txtBalFrom_SelectionChanged" TextChanged="txtBalFrom_TextChanged"/>
+                                        Height="18" HorizontalAlignment="Left" Width="120" Margin="0,10,0,0" SelectionChanged="txtBalFrom_SelectionChanged"/>
                                     </Grid>
 
                                     <Grid Grid.Column="0" Grid.Row="2" Margin="0,0,8,0">

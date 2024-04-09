@@ -1,8 +1,8 @@
-﻿using DAL;
+﻿using BIZ;
+using DAL;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,24 +15,27 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using BIZ;
 
 namespace BankOopCA2.UserBank
 {
     /// <summary>
-    /// Interaction logic for UserDebit.xaml
+    /// Interaction logic for UserCredit.xaml
     /// </summary>
-    public partial class UserDebit : UserControl
+    public partial class UserCredit : UserControl
     {
         DAO dao = new DAO();
         SqlDataReader dr;
         Bal ba = new Bal();
-        public UserDebit()
+        public UserCredit()
         {
             InitializeComponent();
         }
+        private void CloseWindow(object sender, RoutedEventArgs e)
+        {
+            CloseWindow(sender, e);
+        }
 
-        private void btnDebitAccount_Click(object sender, RoutedEventArgs e)
+        private void btnCreditAccount_Click(object sender, RoutedEventArgs e)
         {
             decimal amt = decimal.Parse(txtTranAmount.Text);
             decimal bal = decimal.Parse(txtBal.Text);
@@ -40,7 +43,7 @@ namespace BankOopCA2.UserBank
 
             if (amt < bal)
             {
-                nb = bal - amt;
+                nb = bal + amt;
                 MessageBox.Show("Sucess", "Alert", MessageBoxButton.OK);
             }
             else
@@ -48,17 +51,23 @@ namespace BankOopCA2.UserBank
                 MessageBox.Show("Insufficient Funds", "Alert", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
-        private void CloseWindow(object sender, RoutedEventArgs e)
-        {
-            this.Visibility = Visibility.Collapsed;
-        }
 
         private void txtBal_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
 
-        private void UserDebit_Loaded(object sender, RoutedEventArgs e)
+        private void txtBalFrom_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void UserCredit_Loaded(object sender, LoadCompletedEventHandler e)
+        {
+
+        }
+
+        private void UserCredit_Loaded(object sender, RoutedEventArgs e)
         {
 
         }

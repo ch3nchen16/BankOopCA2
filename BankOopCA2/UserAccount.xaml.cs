@@ -57,14 +57,15 @@ namespace BankOopCA2
         private void DepositFunds_Click(object sender, RoutedEventArgs e)
         {
             // Handle Deposit Funds
-            UserDebit ud = new UserDebit();
-            ud.Show();
+            Deposit deposit = new Deposit();
+            deposit.Show();
             //this.AddChild(ud);
         }
         private void WithdrawFunds_Click(object sender, RoutedEventArgs e)
         {
             // Handle Withdraw Funds
-            UserCredit uc = new UserCredit();
+            Withdrawl wd = new Withdrawl();
+            wd.Show();
         }
 
         private void TransferFunds_Click(object sender, RoutedEventArgs e)

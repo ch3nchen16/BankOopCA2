@@ -1,8 +1,5 @@
-﻿using DAL;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,24 +10,32 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DAL;
 using BIZ;
+using System.Data.SqlClient;
+using System.Data;
+using System.Data.SqlTypes;
 
-namespace BankOopCA2.UserBank
+namespace BankOopCA2
 {
     /// <summary>
-    /// Interaction logic for Transfer.xaml
+    /// Interaction logic for TransferFund.xaml
     /// </summary>
-    public partial class Transfer : Window
+    public partial class TransferFund : UserControl
     {
-        public Transfer()
-        {
-            InitializeComponent();
-        }
         DAO dao = new DAO();
         SqlDataReader dr;
         Bal ba = new Bal();
-
+        public TransferFund()
+        {
+            InitializeComponent();
+        }
+        private void CloseWindow(object sender, RoutedEventArgs e)
+        {
+            CloseWindow(sender, e);
+        }
         private void btnDebitAccount_Click(object sender, RoutedEventArgs e)
         {
             decimal amt = decimal.Parse(txtTranAmmount.Text);
@@ -79,46 +84,19 @@ namespace BankOopCA2.UserBank
                 comboSecondAccount.SelectedValuePath = dt.Columns["AccNum"].ToString();
             }
         }
-
-        private void NewAccount_Click(object sender, RoutedEventArgs e)
+        private void txtBalTo_SelectionChanged(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void EditAccount_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void DepositFunds_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void WithdrawFunds_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void TransferFunds_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ViewTransactions_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-
+            //ba.GetBalTo(int AccNum, string );
         }
 
         private void txtBalFrom_SelectionChanged(object sender, RoutedEventArgs e)
         {
 
         }
+
+        private void txtBalFrom_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
-    
 }

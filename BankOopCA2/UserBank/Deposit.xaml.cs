@@ -46,5 +46,45 @@ namespace BankOopCA2.UserBank
                 MessageBox.Show("Insufficient Funds", "Alert", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void EditAccount_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DepositFunds_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void NewAccount_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void WithdrawFunds_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TransferFunds_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ViewTransactions_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void txtBalFrom_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -1,8 +1,8 @@
-﻿using DAL;
+﻿using BIZ;
+using DAL;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,26 +13,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using BIZ;
 
 namespace BankOopCA2.UserBank
 {
     /// <summary>
-    /// Interaction logic for UserDebit.xaml
+    /// Interaction logic for Withdrawl.xaml
     /// </summary>
-    public partial class UserDebit : UserControl
+    public partial class Withdrawl : Window
     {
-        DAO dao = new DAO();
-        SqlDataReader dr;
-        Bal ba = new Bal();
-        public UserDebit()
+        public Withdrawl()
         {
             InitializeComponent();
         }
+        DAO dao = new DAO();
+        SqlDataReader dr;
+        Bal ba = new Bal();
 
-        private void btnDebitAccount_Click(object sender, RoutedEventArgs e)
+        private void WithdrawFunds_Click(object sender, RoutedEventArgs e)
         {
             decimal amt = decimal.Parse(txtTranAmount.Text);
             decimal bal = decimal.Parse(txtBal.Text);
@@ -48,22 +46,43 @@ namespace BankOopCA2.UserBank
                 MessageBox.Show("Insufficient Funds", "Alert", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
-        private void CloseWindow(object sender, RoutedEventArgs e)
-        {
-            this.Visibility = Visibility.Collapsed;
-        }
 
-        private void txtBal_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void UserDebit_Loaded(object sender, RoutedEventArgs e)
+        private void ViewTransactions_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
         private void txtBalFrom_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnDebitAccount_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DepositFunds_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void EditAccount_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void NewAccount_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TransferFunds_Click(object sender, RoutedEventArgs e)
         {
 
         }
