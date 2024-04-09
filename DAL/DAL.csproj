@@ -43,9 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddPeople.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="Bal.cs" />
     <Compile Include="DAO.cs" />
     <Compile Include="DisplayAll.cs" />
+    <Compile Include="Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
