@@ -1,0 +1,123 @@
+﻿<Window x:Class="BankOopCA2.UserBank.Deposit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BankOopCA2.UserBank"
+        mc:Ignorable="d"
+        Title="Deposit" Height="auto" Width="650">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" FontSize="20">
+            <MenuItem Header="File" >
+                <!--<MenuItem Header="Log Out" Click="Logout_Click"/>-->
+                <MenuItem Header="Exit"/>
+            </MenuItem>
+            <MenuItem Header="Account" Click="MenuItem_Click">
+                <MenuItem Header="New Account" Click="NewAccount_Click"/>
+                <MenuItem Header="Edit Account" Click="EditAccount_Click"/>
+                <MenuItem Header="Deposit Funds" Click="DepositFunds_Click"/>
+                <MenuItem Header="Withdraw Funds" Click="WithdrawFunds_Click"/>
+                <MenuItem Header="Transfer Funds" Click="TransferFunds_Click"/>
+                <MenuItem Header="View Transactions" Click="ViewTransactions_Click"/>
+            </MenuItem>
+        </Menu>
+        <Grid Background="Transparent">
+            <Grid Grid.Row="1">
+                <Border Background="White">
+                    <Grid>
+                        <Grid x:Name="LayoutRoot">
+                            <Grid.Background>
+                                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStop Offset="0" Color="#EBDDE2"/>
+                                        <GradientStop Offset="1" Color="Azure"/>
+                                    </LinearGradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </Grid.Background>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="50"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="0" Margin="20,20,0,0">
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,10" HorizontalAlignment="Left" x:Name="Header">
+                                    <TextBlock Name="TextBlockTitle" Width="Auto" Text="Cash Deposit"
+                                                    TextWrapping="NoWrap" FontFamily="Calibri" FontSize="18" 
+                                                    Margin="5,0,0,0" VerticalAlignment="Bottom">
+
+                                    </TextBlock>
+                                </StackPanel>
+                            </Grid>
+
+                            <Grid Grid.Row="1">
+                                <Rectangle  Width="auto" VerticalAlignment="Top" Margin="20,30.6,20,0" Height="2"></Rectangle>
+                                <Grid Grid.Column="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="230"></ColumnDefinition>
+                                        <ColumnDefinition Width="170"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30"></RowDefinition>
+                                        <RowDefinition Height="50"></RowDefinition>
+
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Column="0" Grid.Row="0" Margin="0,0,8,0">
+                                        <TextBlock x:Name="lblAccountList" VerticalAlignment="Top" Text="Your Account:" HorizontalAlignment="Right" Width="auto" Margin="0,-1,0,0">
+
+                                        </TextBlock>
+                                    </Grid>
+                                    <Grid Grid.Column="1" Grid.Row="0">
+                                        <TextBlock x:Name="lblAccNum" VerticalAlignment="Center"  HorizontalAlignment="Left" Width="auto">
+                                        </TextBlock>
+                                    </Grid>
+
+
+                                    <Grid Grid.Column="0" Grid.Row="1" Margin="0,0,8,0">
+                                        <TextBlock x:Name="lblBalFrom" VerticalAlignment="Top" Text="Balance:" HorizontalAlignment="Left" Width="auto" Margin="179,0,0,0" RenderTransformOrigin="0.514,-1.328"/>
+                                        <TextBlock x:Name="lblTranAmount" VerticalAlignment="Top" Text="Amount:" HorizontalAlignment="Right" Width="auto" Margin="0,34,0,0">
+
+                                        </TextBlock>
+                                    </Grid>
+                                    <Grid Grid.Column="1" Grid.Row="1">
+                                        <TextBox x:Name="txtBal" Opacity="1" IsReadOnly="True"
+                                        FontFamily="Tahoma" FontSize="11" FontStyle="Normal"
+                                        FontWeight="Normal"
+                                        VerticalAlignment="Top" Block.LineHeight="Auto" Block.TextAlignment="Left"
+                                        Height="18" HorizontalAlignment="Left" Width="120" SelectionChanged="txtBalFrom_SelectionChanged" TextChanged="txtBal_TextChanged"/>
+                                        <TextBox x:Name="txtTranAmount" Opacity="1"  
+                                                  FontFamily="Tahoma" FontSize="11" FontStyle="Normal"
+                                                  FontWeight="Normal" Margin="0,32,0,0" 
+                                                  VerticalAlignment="Top" Block.LineHeight="Auto" Block.TextAlignment="Left"
+                                                  Height="18" HorizontalAlignment="Left" Width="120">
+                                        </TextBox>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+
+                            <Grid Grid.Row="2">
+                                <Rectangle  Width="auto" VerticalAlignment="Top" Margin="20,30.6,20,0" Height="2"></Rectangle>
+                                <Grid Grid.Column="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="230"></ColumnDefinition>
+                                        <ColumnDefinition Width="190"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30"></RowDefinition>
+                                        <RowDefinition Height="30"></RowDefinition>
+
+                                    </Grid.RowDefinitions>
+
+                                    <Grid Grid.Column="1" Grid.Row="0" Margin="0,0,-4,15" Grid.RowSpan="2">
+                                        <Button x:Name="btnCredit" Click="btnCreditAccount_Click" Margin="26,15,0,0"   VerticalAlignment="Top" Content="Deposit" Height="20" HorizontalAlignment="Left" Width="86" Cursor="Hand" />
+
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+    </DockPanel>
+</Window>
