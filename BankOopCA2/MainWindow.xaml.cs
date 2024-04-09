@@ -29,14 +29,14 @@ namespace BankOopCA2
             InitializeComponent();
         }
         UserAccount ua = new UserAccount();
-        Biz b = new Biz();
-        Register register = new Register();
+        Login l = new Login();
+        //Register register = new Register();
         DAO dao = new DAO();
         private void btnLog_Click(object sender, RoutedEventArgs e)
         {
             string user = txtUser.Text;
             string pass = Pwbox.Password;
-            ua.Fullname = b.GetUser(user, pass);
+            ua.Fullname = l.GetUser(user, pass);
             if (ua.Fullname == "Error")
             {
                 MessageBox.Show("Nobody in database");
@@ -57,10 +57,11 @@ namespace BankOopCA2
             ua.Show();
             Close();
         }
+
         private void buttonRegister_Click(object sender, RoutedEventArgs e)
         {
-            register.Show();
-            Close();
+            //register.Show();
+            //Close();
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)

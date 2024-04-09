@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BankOopCA2.UserBank;
 using DAL;
 
 namespace BankOopCA2
@@ -51,11 +52,14 @@ namespace BankOopCA2
         private void DepositFunds_Click(object sender, RoutedEventArgs e)
         {
             // Handle Deposit Funds
+            
+            //this.AddChild(ud);
         }
 
         private void WithdrawFunds_Click(object sender, RoutedEventArgs e)
         {
             // Handle Withdraw Funds
+            UserCredit uc = new UserCredit();
         }
 
         private void TransferFunds_Click(object sender, RoutedEventArgs e)
@@ -71,7 +75,7 @@ namespace BankOopCA2
         private void dgv_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             DisplayAll dall = new DisplayAll();
-            dgv.ItemsSource = dall.AllAcc().DefaultView;
+            //dgv.ItemsSource = dall.AllAcc().DefaultView;
 
         }
 

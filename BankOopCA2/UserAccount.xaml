@@ -3,9 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:uc="clr-namespace:BankOopCA2.UserBank"
         xmlns:local="clr-namespace:BankOopCA2"
         mc:Ignorable="d"
-                Title="UserAccount" Height="450" Width="800">
+        Title="UserAccount" Height="450" Width="800">
+
+
     <DockPanel>
         <Menu DockPanel.Dock="Top" FontSize="20">
             <MenuItem Header="File" >
@@ -21,71 +24,12 @@
                 <MenuItem Header="View Transactions" Click="ViewTransactions_Click"/>
             </MenuItem>
         </Menu>
-
-        <Grid Grid.Row="1">
-            <Border Background="White">
-                <Grid>
-                    <Grid x:Name="LayoutRoot">
-                        <Grid.Background>
-                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
-                                <LinearGradientBrush.GradientStops>
-                                    <GradientStop Offset="0" Color="AliceBlue"/>
-                                    <GradientStop Offset="1" Color="Azure"/>
-                                </LinearGradientBrush.GradientStops>
-                            </LinearGradientBrush>
-                        </Grid.Background>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="50"/>
-                            <RowDefinition Height="50"/>
-                            <RowDefinition Height="50"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="50"/>
-                        </Grid.RowDefinitions>
-
-                        <Grid Grid.Row="0" Margin="20,20,20,0" >
-                            <StackPanel Orientation="Horizontal" Margin="0,0,0,10" HorizontalAlignment="Left" x:Name="Header">
-                                <TextBlock Name="TextBlockTitle" Width="Auto" Text="Hello"
-                                                                           TextWrapping="NoWrap" FontFamily="Calibri" FontSize="18" 
-                                                                           Margin="5,0,0,0" VerticalAlignment="Bottom">
-                                </TextBlock>
-                            </StackPanel>
-                        </Grid>
-
-                        <Grid Grid.Row="1" Margin="20,20,20,0" Background="LightGray">
-                            <StackPanel Orientation="Horizontal" Margin="0,0,0,10" HorizontalAlignment="Left" x:Name="MessageHeader">
-                                <TextBlock Name="TextBlockWelcome" Width="Auto" TextWrapping="NoWrap" FontFamily="Calibri" FontSize="18" Margin="5,0,0,0" VerticalAlignment="Bottom">
-                                </TextBlock>
-                            </StackPanel>
-                        </Grid>
-                        <Grid Grid.Row="2" Margin="20,20,20,0" Background="LightGray">
-                            <TextBlock Name="TextBlockAvaliableBalanceMessage" Width="Auto" TextWrapping="NoWrap" Text="Avaliable Balance : " FontFamily="Calibri" FontSize="18" Margin="5,0,0,0" VerticalAlignment="Bottom">
-                            </TextBlock>
-                            <TextBlock Name="TextBlockAvaliableBalance" Width="Auto" TextWrapping="NoWrap" FontFamily="Calibri" FontSize="18" Margin="175,0,0,0" VerticalAlignment="Bottom">
-                            </TextBlock>
-
-                        </Grid>
-
-                        <Grid Grid.Row="3" Margin="20,20,20,0">
-                            <Rectangle  Width="auto" VerticalAlignment="Top" Margin="20,30.6,20,0" Height="2"></Rectangle>
-                            <Grid Grid.Column="0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="20"></ColumnDefinition>
-                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                    <ColumnDefinition Width="20"></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="30"></RowDefinition>
-                                    <RowDefinition Height="Auto"></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <Grid Grid.Column="1" Grid.Row="1" Background="Transparent" >
-                                    <DataGrid x:Name="dgv" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,-18,-478,242" SelectionChanged="dgv_SelectionChanged"/>
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                </Grid>
-            </Border>
+        <Grid>
+            <!-- Other content of your window -->
+            <uc:UserDebit></uc:UserDebit>
+            <!--<uc:UserCredit></uc:UserCredit>-->
         </Grid>
+
     </DockPanel>
 </Window>
 

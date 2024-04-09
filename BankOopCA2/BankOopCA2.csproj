@@ -56,6 +56,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -74,13 +76,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Register.xaml.cs">
+    <Compile Include="LoginForm\Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserBank\TransferFund.xaml.cs">
+      <DependentUpon>TransferFund.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserAccount.xaml.cs">
       <DependentUpon>UserAccount.xaml</DependentUpon>
     </Compile>
-    <Page Include="AddAccount.xaml">
+    <Compile Include="UserBank\UserCredit.xaml.cs">
+      <DependentUpon>UserCredit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserBank\UserDebit.xaml.cs">
+      <DependentUpon>UserDebit.xaml</DependentUpon>
+    </Compile>
+    <Page Include="UserBank\AddAccount.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -88,7 +99,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="AddAccount.xaml.cs">
+    <Compile Include="UserBank\AddAccount.xaml.cs">
       <DependentUpon>AddAccount.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
@@ -99,11 +110,23 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Register.xaml">
+    <Page Include="LoginForm\Register.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserBank\TransferFund.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserAccount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserBank\UserCredit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserBank\UserDebit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
