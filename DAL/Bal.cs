@@ -24,8 +24,16 @@ namespace BIZ
         //    cmd.ExecuteNonQuery();
         //    dao.CloseCon();
         //}
-        void GetBal(int accNum, string firstN, string lastN, string bal)
+        public class ResultOfGetBalance
         {
+            public string FirstName { get; set; }
+            public string LastName { get; set; }
+            public string Balance { get; set; }
+        }
+
+        public ResultOfGetBalance GetBal(int accNum)
+        {
+            string firstN = "", lastN = "", bal = "";
             SqlCommand cmd = dao.OpenCon().CreateCommand();
             cmd.CommandText = "uspGetBal";
             cmd.CommandType = CommandType.StoredProcedure;
@@ -40,6 +48,12 @@ namespace BIZ
                 bal = dr["Balance"].ToString();
             }
             dao.CloseCon();
+            return new ResultOfGetBalance()
+            {
+                FirstName = firstN, 
+                LastName = lastN,
+                Balance = bal
+            };
         }
         public void GetBalTo(int AccNum, string firstN, string lastN, string bal)
         {
